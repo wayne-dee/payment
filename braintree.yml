@@ -1,0 +1,21 @@
+# Add your project name here
+name: custom-actions-payment-method
+
+kind: paymentMethod
+
+# Configure environment variables which will be provided at runtime
+# environment:
+#   sandbox:
+#     PUBLIC_KEY: "sandbox_key"
+#   production:
+#     PUBLIC_KEY: "prod_key"
+
+functions:
+  authorizeTransaction:
+    handler: dist/index.AuthorizeTransactionHandler
+  captureTransaction:
+    handler: dist/index.CaptureTransactionHandler
+  refundTransaction:
+    handler: dist/index.RefundTransactionHandler
+  voidTransaction:
+    handler: dist/index.VoidTransactionHandler

@@ -1,0 +1,29 @@
+{
+  "name": "custom-actions-payment-method",
+  "version": "0.0.0",
+  "description": "A Braintree Custom Actions template project",
+  "scripts": {
+    "start": "nodemon -e ts --ignore dist --exec 'ncc build src/index.ts -o dist -s'",
+    "pretest": "npm run fmt && npm run lint",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "ncc build src/index.ts -o dist -m -s",
+    "lint": "tslint -c tslint.json './**/*.ts' -t stylish",
+    "fmt": "prettier --write \"src/**/*.{json,ts,yml,md}\"",
+    "typecheck": "tsc -p . --noEmit"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/node": "^8.10.51",
+    "@zeit/ncc": "^0.20.4",
+    "braintree-types": "git://github.com/braintree/braintree-types.git#semver:^1.0.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.5.3"
+  }
+}
